@@ -67,6 +67,8 @@
 
 
 
+
+
 #Operators
 #Example 11
 # print(10 + 5)
@@ -79,6 +81,8 @@
 
 #Example 14
 # print(5 + 4 - 7 + 3)
+
+
 
 
 
@@ -360,6 +364,8 @@
 
 
 
+
+
 #Tuples
 #Example 71
 # thistuple = ("apple", "banana", "cherry")
@@ -513,6 +519,8 @@
 
 
 
+
+
 #Sets
 #Example 98
 # thisset = {"apple", "banana", "cherry", True, 1, 2}
@@ -535,3 +543,603 @@
 # print(thisset)
 
 #Example 103
+# thisset = {"apple", "banana", "cherry"}
+
+# for x in thisset:
+#   print(x)
+
+#Example 104
+# thisset = {"apple", "banana", "cherry"}
+
+# print("banana" in thisset)
+
+#Example 105
+# thisset = {"apple", "banana", "cherry"}
+# thisset.add("orange")
+# print(thisset)
+
+#Example 106
+# thisset = {"apple", "banana", "cherry"}
+# tropical = {"pineapple", "mango", "papaya"}
+
+# thisset.update(tropical)
+
+# print(thisset)
+
+#Example 107
+# thisset = {"apple", "banana", "cherry"}
+# mylist = ["kiwi", "orange"]
+
+# thisset.update(mylist)
+
+# print(thisset)
+
+#Example 108
+# thisset = {"apple", "banana", "cherry"}
+# thisset.remove("banana")
+# print(thisset)
+
+#Example 109
+# thisset = {"apple", "banana", "cherry"}
+# thisset.discard("banana")
+# print(thisset)
+
+#Example 110
+# thisset = {"apple", "banana", "cherry"}
+# x = thisset.pop() #random element
+# print(x)
+# print(thisset)
+
+#Example 111
+# thisset = {"apple", "banana", "cherry"}
+# thisset.clear()
+# print(thisset)
+
+#Example 112
+# thisset = {"apple", "banana", "cherry"}
+# del thisset #Completely delete the set
+# print(thisset)
+
+#Example 113
+# thisset = {"apple", "banana", "cherry"}
+
+# for x in thisset:
+#   print(x)
+
+#Example 114
+# set1 = {"a", "b", "c"}
+# set2 = {1, 2, 3}
+
+# set3 = set1.union(set2)
+# print(set3)
+
+#Example 115
+# set1 = {"a", "b", "c"}
+# set2 = {1, 2, 3}
+
+# set3 = set1 | set2
+# print(set3)
+
+#Example 116
+# set1 = {"a", "b", "c"}
+# set2 = {1, 2, 3}
+# set3 = {"John", "Elena"}
+# set4 = {"apple", "bananas", "cherry"}
+
+# myset = set1.union(set2, set3, set4)
+# print(myset)
+
+#Example 117
+# set1 = {"a", "b", "c"}
+# set2 = {1, 2, 3}
+# set3 = {"John", "Elena"}
+# set4 = {"apple", "bananas", "cherry"}
+
+# myset = set1 | set2 | set3 |set4
+# print(myset)
+
+#Example 118
+# x = {"a", "b", "c"}
+# y = (1, 2, 3)
+
+# z = x.union(y)
+# print(z)
+
+#Example 119
+# set1 = {"a", "b" , "c"}
+# set2 = {1, 2, 3}
+
+# set1.update(set2)
+# print(set1)
+
+#Example 120
+# set1 = {"apple", "banana", "cherry"}
+# set2 = {"google", "microsoft", "apple"}
+
+# set3 = set1.intersection(set2) #return intersection
+# print(set3)
+
+#Example 121
+# set1 = {"apple", "banana", "cherry"}
+# set2 = {"google", "microsoft", "apple"}
+
+# set3 = set1 & set2 #instead of intersection
+# print(set3)
+
+#Example 122
+# set1 = {"apple", "banana", "cherry"}
+# set2 = {"google", "microsoft", "apple"}
+
+# set1.intersection_update(set2)
+
+# print(set1)
+
+#Example 123
+# set1 = {"apple", 1,  "banana", 0, "cherry"}
+# set2 = {False, "google", 1, "apple", 2, True}
+
+# set3 = set1.intersection(set2)
+
+# print(set3)
+
+#Example 124
+# set1 = {"apple", "banana", "cherry"}
+# set2 = {"google", "microsoft", "apple"}
+
+# set3 = set1.difference(set2)
+
+# print(set3)
+
+#Example 125
+# set1 = {"apple", "banana", "cherry"}
+# set2 = {"google", "microsoft", "apple"}
+
+# set3 = set1 - set2
+# print(set3)
+
+#Example 126
+# set1 = {"apple", "banana", "cherry"}
+# set2 = {"google", "microsoft", "apple"}
+
+# set1.difference_update(set2)
+
+# print(set1)
+
+#Example 127
+# set1 = {"apple", "banana", "cherry"}
+# set2 = {"google", "microsoft", "apple"}
+
+# set3 = set1.symmetric_difference(set2) #like outer join
+
+# print(set3)
+
+#Example 128
+# set1 = {"apple", "banana", "cherry"}
+# set2 = {"google", "microsoft", "apple"}
+
+# set3 = set1 ^ set2
+# print(set3)
+
+#Example 129
+# set1 = {"apple", "banana", "cherry"}
+# set2 = {"google", "microsoft", "apple"}
+
+# set1.symmetric_difference_update(set2)
+
+# print(set1)
+
+
+
+
+
+#Dictionary
+#Example 130
+# thisdict = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# print(thisdict["brand"])
+
+#Example 131
+# thisdict = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964,
+#   "year": 2020
+# }
+# print(thisdict)
+
+#Example 132
+# thisdict = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# print(type(thisdict))
+
+#Example 133
+# thisdict = dict(name = "John", age = 36, country = "Norway")
+# print(thisdict)
+
+#Example 134
+# thisdict = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# x = thisdict.get("model")
+# y = thisdict.keys()
+
+
+#Example 135
+# car = {
+# "brand": "Ford",
+# "model": "Mustang",
+# "year": 1964
+# }
+# x = car.keys()
+# print(x) #before the change
+# car["color"] = "white"
+# print(x) #after the change
+
+#Example 136
+# car = {
+# "brand": "Ford",
+# "model": "Mustang",
+# "year": 1964
+# }
+# x = car.values()
+# print(x) #before the change
+# car["year"] = 2020
+# print(x) #after the change
+
+#Example 137
+# car = {
+# "brand": "Ford",
+# "model": "Mustang",
+# "year": 1964
+# }
+# x = car.items()
+# print(x) #before the change
+# car["year"] = 2020
+# print(x) #after the change
+
+#Example 138
+# thisdict = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# if "model" in thisdict:
+#   print("Yes, 'model' is one of the keys in the thisdict dictionary")
+
+#Example 139
+# thisdict = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# thisdict.update({"year": 2020})
+
+#Example 140
+# thisdict = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# thisdict["color"] = "red"
+# print(thisdict)
+
+#Example 141
+# thisdict = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# thisdict.update({"color": "red"})
+
+#Example 142
+# thisdict = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# thisdict.pop("model")
+# print(thisdict)
+
+#Example 143
+# thisdict = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# thisdict.popitem()
+# print(thisdict)
+
+#Example 144
+# thisdict = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# del thisdict["model"]
+# print(thisdict)
+
+#Example 145
+# thisdict = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# del thisdict
+# print(thisdict) #this will cause an error because "thisdict" no longer exists.
+
+#Example 146
+# thisdict = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# thisdict.clear()
+# print(thisdict)
+
+#Example 147
+# thisdict = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# for x in thisdict:
+#   print(x)
+
+#Example 148
+# for x in thisdict:
+#   print(thisdict[x])
+
+#Example 149
+# for x in thisdict.values():
+#   print(x)
+
+#Example 150
+# for x in thisdict.keys():
+#   print(x)
+
+#Example 151
+# for x, y in thisdict.items():
+#   print(x, y)
+
+#Example 152
+# thisdict = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# mydict = thisdict.copy()
+# print(mydict)
+
+#Example 153
+# thisdict = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# mydict = dict(thisdict)
+# print(mydict)
+
+#Example 154
+# myfamily = {
+#   "child1" : {
+#     "name" : "Emil",
+#     "year" : 2004
+#   },
+#   "child2" : {
+#     "name" : "Tobias",
+#     "year" : 2007
+#   },
+#   "child3" : {
+#     "name" : "Linus",
+#     "year" : 2011
+#   }
+# }
+
+#Example 155
+# child1 = {
+#   "name" : "Emil",
+#   "year" : 2004
+# }
+# child2 = {
+#   "name" : "Tobias",
+#   "year" : 2007
+# }
+# child3 = {
+#   "name" : "Linus",
+#   "year" : 2011
+# }
+
+# myfamily = {
+#   "child1" : child1,
+#   "child2" : child2,
+#   "child3" : child3
+# }
+
+#Example 156
+# print(myfamily["child2"]["name"])
+
+#Example 157
+# for x, obj in myfamily.items():
+#   print(x)
+
+#   for y in obj:
+#     print(y + ':', obj[y])
+
+
+
+
+
+#If... else
+#Example 158
+# a = 33
+# b = 200
+# if b > a:
+#   print("b is greater than a")
+
+#Example 159
+# a = 33
+# b = 33
+# if b > a:
+#   print("b is greater than a")
+# elif a == b:
+#   print("a and b are equal")
+
+#Example 160
+# a = 200
+# b = 33
+# if b > a:
+#   print("b is greater than a")
+# elif a == b:
+#   print("a and b are equal")
+# else:
+#   print("a is greater than b")
+
+#Example 161
+# a = 2
+# b = 330
+# print("A") if a > b else print("B")
+
+#Example 162
+# a = 330
+# b = 330
+# print("A") if a > b else print("=") if a == b else print("B")
+
+#Example 163
+# a = 200
+# b = 33
+# c = 500
+# if a > b and c > a:
+#   print("Both conditions are True")
+
+#Example 164
+# a = 200
+# b = 33
+# c = 500
+# if a > b or a > c:
+#   print("At least one of the conditions is True")
+
+#Example 165
+# a = 33
+# b = 200
+# if not a > b:
+#   print("a is NOT greater than b")
+
+#Example 166
+# x = 41
+
+# if x > 10:
+#   print("Above ten,")
+#   if x > 20:
+#     print("and also above 20!")
+#   else:
+#     print("but not above 20.")
+
+#Example 167
+# a = 33
+# b = 200
+
+# if b > a:
+#   pass
+
+
+
+
+
+#While Loop
+#Example 168
+# i = 1
+# while i < 6:
+#   print(i)
+#   i += 1
+
+#Example 169
+# i = 1
+# while i < 6:
+#   print(i)
+#   if i == 3:
+#     break
+#   i += 1
+
+#Example 170
+# i = 0
+# while i < 6:
+#   i += 1
+#   if i == 3:
+#     continue
+#   print(i)
+
+#Example 171
+# i = 1
+# while i < 6:
+#   print(i)
+#   i += 1
+# else:
+#   print("i is no longer less than 6")
+
+
+
+
+
+#For Loop
+#Example 172
+# for x in "banana":
+#   print(x)
+
+#Example 173
+# fruits = ["apple", "banana", "cherry"]
+# for x in fruits:
+#   print(x)
+#   if x == "banana":
+#     break
+
+#Example 174
+# fruits = ["apple", "banana", "cherry"]
+# for x in fruits:
+#   if x == "banana":
+#     continue
+#   print(x)
+
+#Example 175
+# for x in range(6):
+#   print(x)
+
+#Example 176
+# for x in range(2, 6):
+#   print(x)
+
+#Example 177
+# for x in range(2, 30, 3):
+#   print(x)
+
+#Example 178
+# for x in range(6):
+#   print(x)
+# else:
+#   print("Finally finished!")
+
+#Example 179
+# for x in range(6):
+#   if x == 3: break
+#   print(x)
+# else:
+#   print("Finally finished!") #does not print
+
+#Example 180
+# adj = ["red", "big", "tasty"]
+# fruits = ["apple", "banana", "cherry"]
+
+# for x in adj:
+#   for y in fruits:
+#     print(x, y)
+
+#Example 181
+# for x in [0, 1, 2]:
+#   pass
