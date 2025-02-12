@@ -1,7 +1,7 @@
 from tabulate import tabulate
 import json
 
-with open(r"C:\Users\Akyl\Desktop\University\PP2Labs\Lab_4\JSON\sample-data.json", "r", encoding = "utf-8") as file:
+with open(r".\JSON\sample-data.json", "r", encoding = "utf-8") as file:
     data = json.load(file)
 
 print("Interface Status")
