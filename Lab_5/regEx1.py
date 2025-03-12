@@ -5,4 +5,4 @@ def ab(text):
     return match
 
 text = "cabcabbabcabagfa"
-print(ab(list))
+print(ab(text))
