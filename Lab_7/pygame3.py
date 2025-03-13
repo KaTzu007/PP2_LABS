@@ -1,33 +1,34 @@
 import pygame
 
 pygame.init() #Инициализация
-screen = pygame.display.set_mode((500, 400)) #Размер экрана
+
+width = 500
+height = 400
+screen = pygame.display.set_mode((width, height)) #Размер экрана
 clock = pygame.time.Clock() #Для фпс
 
-x, y = 250, 200 #Координаты для шара
+circle_x, circle_y = width // 2, height // 2 #Позиция
 
 done = False
 while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
+        
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP and circle_y - 25 - 20 >= 0:
+                circle_y -= 20
+            if event.key == pygame.K_DOWN and circle_y + 25 + 20 <= height:
+                circle_y += 20
+            if event.key == pygame.K_LEFT and circle_x - 25 - 20 >= 0:
+                circle_x -= 20
+            if event.key == pygame.K_RIGHT and circle_x + 25 + 20 <= width:
+                circle_x += 20
 
-    pressed = pygame.key.get_pressed() #Какая кнопка была нажата
+    screen.fill((255, 255, 255)) #Закрашиваем экран
+    pygame.draw.circle(screen, (255, 0, 0), (circle_x, circle_y), 25) #Рисуем шар
+    pygame.display.update() #Обновляем экран
 
-    #Границы
-    if pressed[pygame.K_UP] and y > 30: 
-        y -= 20
-    if pressed[pygame.K_DOWN] and y < 370: 
-        y += 20
-    if pressed[pygame.K_LEFT] and x > 30: 
-        x -= 20
-    if pressed[pygame.K_RIGHT] and x < 470: 
-        x += 20
-
-    screen.fill((255, 255, 255)) #Заполняем экран
-    pygame.draw.circle(screen, (255, 0, 0), (x, y), 25) #рисуем шар
-
-    pygame.display.flip() #Для того чтобы было видно все изменения
     clock.tick(60) #60 фпс
 
 pygame.quit()
