@@ -7,7 +7,7 @@ screen = pygame.display.set_mode((500, 500)) #Размер экрана
 clock = pygame.time.Clock() #Для фпс
 
 #Импорт
-body = pygame.image.load("img/body.png")
+body = pygame.image.load("img/body.jpg")
 rightHand = pygame.image.load("img/rightHandCopy.png")
 leftHand = pygame.image.load("img/leftHandCopy.png")
 
@@ -37,8 +37,8 @@ while not done:
     minAngle = -minutes * 6
 
     #Поворачиваем изображения
-    rotRight = pygame.transform.rotate(rightHand, minAngle)
-    rotLeft = pygame.transform.rotate(leftHand, secAngle)
+    rotRight = pygame.transform.rotate(rightHand, secAngle)
+    rotLeft = pygame.transform.rotate(leftHand, minAngle)
 
     #Получаем новые рамки(уже для новых фоток)
     newRectR = rotRight.get_rect(center = (250, 250))
