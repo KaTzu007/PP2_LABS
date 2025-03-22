@@ -1,18 +1,36 @@
 import pygame, time, sys, random
 
-#Класс яблоко
-class Apple:
-    def __init__(self, snakeBody): #Конструктор
+#Класс стены
+class Wall:
+    def __init__(self, snakeBody):
         self.size = 20
         self.rect = self.spawn(snakeBody)
 
-    def spawn(self, snakeBody): #Фугкция для спавна яблока на рандомном месте
+    def spawn(self, snakeBody):
+        while True:
+            self.x = random.randint(1, width // self.size - 2) * self.size
+            self.y = random.randint(1, height // self.size - 2) * self.size
+            wall = pygame.Rect(self.x, self.y, self.size, self.size)
+
+            if wall not in snakeBody:
+                return wall
+            
+    def draw(self, screen):
+        pygame.draw.rect(screen, (0, 0, 0), self.rect)
+
+#Класс яблоко
+class Apple:
+    def __init__(self, snakeBody, walls): #Конструктор
+        self.size = 20
+        self.rect = self.spawn(snakeBody, walls)
+
+    def spawn(self, snakeBody, walls): #Фугкция для спавна яблока на рандомном месте
         while True:
             self.x = random.randint(0, width // self.size - 1) * self.size
             self.y = random.randint(0, height // self.size - 1) * self.size
             apple = pygame.Rect(self.x, self.y, self.size, self.size) #Создаем квадрат для яблоки
 
-            if apple not in snakeBody: #Проверка находиться ли яблоко под змейкой
+            if apple not in snakeBody and all(not apple.colliderect(wall.rect) for wall in walls): #Проверка находиться ли яблоко под змейкой
                 return apple
             
     def draw(self, screen): #Функция для прорисовки
@@ -28,13 +46,22 @@ class Snake:
         self.direction = pygame.Vector2(1, 0) #Направление змеи(вправо)
         self.nextDirection = self.direction #Чтобы избежать багов
 
-        self.apple = Apple(self.body) #Создаем объект яблоко
+        self.walls = []
+        self.addWalls()
+        self.apple = Apple(self.body, self.walls) #Создаем объект яблоко
         
+    def addWalls(self):
+        self.walls.append(Wall(self.body + [wall.rect for wall in self.walls]))
+        self.walls.append(Wall(self.body + [wall.rect for wall in self.walls]))
+    
     def draw(self, screen): #Функция для прорисовки
         pygame.draw.rect(screen, (0, 128, 0), self.body[0]) #Рисуем голову
 
         for segment in self.body[1:]: #Рисуем остальную часть тела
             pygame.draw.rect(screen, (45, 200, 45), segment)
+
+        for wall in self.walls:
+            wall.draw(screen)
 
         self.apple.draw(screen)
         
@@ -54,6 +81,10 @@ class Snake:
         #Если голова врезалась об свое тело
         if head in self.body:
             return False
+        
+        for wall in self.walls:
+            if head.colliderect(wall.rect):
+                return False
 
         self.body.insert(0, head) #Добавляем новую голову в первую позицию
 
@@ -62,6 +93,7 @@ class Snake:
             apples += 1
 
             if apples % 3 == 0: #Проверяем съедено ли 3 яблок
+                self.addWalls()
                 levelUp = pygame.mixer.Sound("src/snake/level-up.mp3") #Включаем музыку
                 levelUp.play()
 
@@ -74,7 +106,7 @@ class Snake:
 
             time.sleep(0.1)
 
-            self.apple = Apple(self.body) #Создаем новый объект яблоки
+            self.apple = Apple(self.body, self.walls) #Создаем новый объект яблоки
         else:
             self.body.pop() #Удаляем тело в последнем фрейме, чтобы все выглядело нормально
 
